@@ -1,10 +1,10 @@
-/* AnimationGrid.css */
 .anim-section {
-  padding: 100px 0;
+  padding: 120px 0;
   background: #050510;
   text-align: center;
 }
 
+/* Title */
 .anim-title {
   font-family: "Cinzel", serif;
   font-size: 32px;
@@ -13,27 +13,70 @@
   letter-spacing: 1px;
 }
 
+/* Grid Layout */
 .anim-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 26px;
-  width: 90%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 85%;
   margin: auto;
 }
 
+/* Card Container */
 .anim-card {
   position: relative;
-  overflow: hidden;
   border-radius: 14px;
+  overflow: hidden;
   background: #0b0e1d;
   cursor: pointer;
-  transition: 0.4s ease;
 }
 
-.anim-thumb img {
+/* Video Container */
+.anim-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* ✅ keeps uniform video size */
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* Video styling */
+.anim-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.6s ease;
-  filter: brightness(0.85) contrast(1.05);
+  filter: brightness(0.75) blur(1px);
+  transition: 0.4s ease;
+}
+
+/* Hover effect */
+.anim-thumb:hover .anim-video {
+  filter: brightness(1) blur(0);
+  transform: scale(1.03);
+}
+
+/* Tag Overlay */
+.overlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.45);
+  padding: 6px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+}
+
+.tag {
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* Title under video */
+.anim-name {
+  color: #eae9ff;
+  font-size: 15px;
+  margin-top: 12px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
 }
