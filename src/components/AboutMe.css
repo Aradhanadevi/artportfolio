@@ -1,0 +1,115 @@
+.about-cine {
+  padding: 140px 0;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  background: #03030a;
+}
+
+/* Cosmic gradients & noise same as before — keep your CSS here */
+
+/* Layout */
+.about-inner {
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Tagline */
+.section-tagline {
+  font-size: 14px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.about-heading {
+  font-family: "Cinzel", serif;
+  font-size: 52px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+/* Paragraph */
+.about-desc {
+  width: 90%;
+  font-size: 17px;
+  opacity: 0.9;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+/* Tags */
+.about-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+/* Skills Chips */
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-chips span {
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  font-size: 12px;
+}
+
+/* Photo */
+.about-photo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo {
+  width: 320px;
+  height: 380px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Glow */
+.glow-ring {
+  position: absolute;
+  inset: -25px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(160,120,255,0.4), transparent 60%);
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-desc {
+    width: 100%;
+  }
+}
