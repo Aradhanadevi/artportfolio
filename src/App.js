@@ -4,6 +4,8 @@ import Hero from "./components/Hero";
 import AnimationGrid from "./components/AnimationGrid";
 import AboutMe from "./components/AboutMe";
 import ToolsSection from "./components/ToolsSection";
+import Gallery from "./components/Gallery";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <AnimationGrid />
       <AboutMe />
       <ToolsSection />
+      <Gallery />
+      <Contact />
     </>
   );
 }
