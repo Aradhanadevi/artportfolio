@@ -6,6 +6,7 @@ import AboutMe from "./components/AboutMe";
 import ToolsSection from "./components/ToolsSection";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <ToolsSection />
       <Gallery />
       <Contact />
+      <Footer />
     </>
   );
 }
