@@ -1,0 +1,74 @@
+.footer {
+  background: radial-gradient(circle at 50% 10%, #0a0a1f, #030314, #000);
+  color: #e4e4ff;
+  text-align: center;
+  padding: 60px 20px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(150, 80, 255, 0.1), transparent 70%);
+  z-index: 0;
+  filter: blur(90px);
+  animation: cosmicGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes cosmicGlow {
+  from {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(1);
+  }
+  to {
+    opacity: 0.9;
+    transform: translateX(-50%) scale(1.2);
+  }
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: #b19cff;
+  text-shadow: 0 0 10px rgba(190, 150, 255, 0.5);
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: #cfcfff;
+  max-width: 400px;
+  margin: 0 auto 25px;
+  opacity: 0.8;
+}
+
+.footer-socials a {
+  color: #c2b3ff;
+  font-size: 1.6rem;
+  margin: 0 15px;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px #a88fff, 0 0 20px #b19cff;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  font-size: 0.9rem;
+  color: #9a8cff;
+  margin-top: 40px;
+  opacity: 0.7;
+}
