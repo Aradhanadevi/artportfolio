@@ -1,74 +1,100 @@
 .footer {
-  background: radial-gradient(circle at 50% 10%, #0a0a1f, #030314, #000);
-  color: #e4e4ff;
+  background: #050510;
+  padding: 70px 0 40px;
   text-align: center;
-  padding: 60px 20px 30px;
   position: relative;
   overflow: hidden;
+  color: #d7d2ff;
 }
 
+/* Nebula glow */
 .footer::before {
   content: "";
   position: absolute;
-  top: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(150, 80, 255, 0.1), transparent 70%);
-  z-index: 0;
-  filter: blur(90px);
-  animation: cosmicGlow 6s ease-in-out infinite alternate;
-}
-
-@keyframes cosmicGlow {
-  from {
-    opacity: 0.5;
-    transform: translateX(-50%) scale(1);
-  }
-  to {
-    opacity: 0.9;
-    transform: translateX(-50%) scale(1.2);
-  }
-}
-
-.footer-content {
-  position: relative;
-  z-index: 2;
-}
-
-.footer-logo {
-  font-size: 2rem;
-  letter-spacing: 1px;
-  color: #b19cff;
-  text-shadow: 0 0 10px rgba(190, 150, 255, 0.5);
-  margin-bottom: 10px;
-}
-
-.footer-text {
-  font-size: 1rem;
-  color: #cfcfff;
-  max-width: 400px;
-  margin: 0 auto 25px;
-  opacity: 0.8;
-}
-
-.footer-socials a {
-  color: #c2b3ff;
-  font-size: 1.6rem;
-  margin: 0 15px;
-  transition: all 0.3s ease;
-}
-
-.footer-socials a:hover {
-  color: #fff;
-  text-shadow: 0 0 12px #a88fff, 0 0 20px #b19cff;
-  transform: translateY(-3px);
-}
-
-.footer-bottom {
-  font-size: 0.9rem;
-  color: #9a8cff;
-  margin-top: 40px;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(160, 120, 255, 0.18), transparent 60%),
+              radial-gradient(circle at 90% 80%, rgba(90, 150, 255, 0.15), transparent 60%);
+  filter: blur(100px);
   opacity: 0.7;
+  z-index: -2;
+}
+
+/* Fine cosmic noise */
+.footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://i.ibb.co/ZgYjH8t/noise.png");
+  mix-blend-mode: soft-light;
+  opacity: 0.13;
+  z-index: -1;
+}
+
+/* Heading */
+.footer h3 {
+  font-family: "Cinzel", serif;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 18px rgba(160, 120, 255, 0.35);
+}
+
+/* Sub text */
+.footer p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 35px;
+}
+
+/* Social icons container */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+/* Base icon styles */
+.social-icons a {
+  font-size: 1.6rem;
+  color: #cfc6ff;
+  transition: 0.35s ease;
+  position: relative;
+}
+
+/* Soft glow pulse on hover */
+.social-icons a:hover {
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.15);
+  text-shadow: 0 0 12px rgba(180, 150, 255, 0.7),
+               0 0 28px rgba(180, 150, 255, 0.45);
+}
+
+/* Floating ambient orb */
+.footer-orb {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(150, 110, 255, 0.35), transparent 70%);
+  border-radius: 50%;
+  filter: blur(90px);
+  bottom: -20%;
+  right: 10%;
+  animation: floatOrb 9s infinite ease-in-out;
+  opacity: 0.55;
+  z-index: -1;
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0) scale(1); opacity: 0.45; }
+  50% { transform: translateY(-20px) scale(1.05); opacity: 0.7; }
+  100% { transform: translateY(0) scale(1); opacity: 0.45; }
+}
+
+/* Copyright */
+.footer-bottom {
+  font-size: 0.78rem;
+  opacity: 0.5;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
 }
