@@ -1,38 +1,92 @@
+/* ------------------------------------
+   GLOBAL RESET + BASE
+------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #05060a; /* deep space dark */
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ------------------------------------
+   APP CONTAINER
+------------------------------------ */
 .App {
+  width: 100%;
+  min-height: 100vh;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ------------------------------------
+   SMOOTH FADE-IN FOR MAIN CONTENT
+------------------------------------ */
+.fade-in {
+  animation: fadeIn 1.6s ease forwards;
+  opacity: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ------------------------------------
+   DARK GRADIENT BACKGROUND (GLOBAL)
+------------------------------------ */
+.section {
+  width: 100%;
+  padding: 60px 20px;
+  background: radial-gradient(
+    circle at top,
+    rgba(60, 60, 80, 0.15),
+    transparent 70%
+  );
+}
+
+/* ------------------------------------
+   LINKS
+------------------------------------ */
+a {
+  color: #7dd3fc; /* cyan glow */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #b4e4ff;
+}
+
+/* ------------------------------------
+   LOADING SCREEN BASE STYLING
+------------------------------------ */
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  background: #05060a;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ------------------------------------
+   MOBILE RESPONSIVE
+------------------------------------ */
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 16px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 12px;
   }
 }
