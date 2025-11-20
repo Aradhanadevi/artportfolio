@@ -1,10 +1,10 @@
-/* Whole hero */
+/* ----------------------------------------
+   HERO SECTION
+----------------------------------------- */
 .hero {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background: radial-gradient(circle at center, #0c0f22, #050510, #000);
-  background-size: cover;
-  background-position: center;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -12,116 +12,128 @@
   align-items: center;
 }
 
-/* content */
+/* ----------------------------------------
+   CONTENT
+----------------------------------------- */
 .hero-content {
   text-align: center;
-  z-index: 10;
+  z-index: 5;
   padding: 0 20px;
+  max-width: 700px;
 }
 
-/* Title */
 .hero-title {
   font-family: "Cinzel", serif;
   font-size: clamp(26px, 4vw, 56px);
   font-weight: 600;
-  color: #fff;
-  letter-spacing: 1px;
+  color: white;
   opacity: 0;
   animation: dreamFade 2.5s ease forwards;
 }
 
-/* subtitle */
 .hero-sub {
-  margin-top: 10px;
+  margin-top: 12px;
   color: rgba(255, 255, 255, 0.75);
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   opacity: 0;
-  animation: dreamFade 2.5s ease forwards 0.8s;
+  animation: dreamFade 2.5s ease forwards 0.6s;
 }
 
-/* Floating button */
 .enter-btn {
   margin-top: 32px;
-  padding: 10px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 26px;
+  border: 1px solid rgba(255,255,255,0.3);
   color: white;
-  border-radius: 10px;
-  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   transition: 0.3s;
-  display: inline-block;
   opacity: 0;
-  animation: dreamFade 2.8s ease forwards 1.4s;
+  animation: dreamFade 2.8s ease forwards 1.2s;
 }
+
 .enter-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.12);
 }
 
 /* dreamy fade */
 @keyframes dreamFade {
-  0% {
+  from {
     opacity: 0;
-    filter: blur(8px);
     transform: translateY(20px);
+    filter: blur(8px);
   }
-  100% {
+  to {
     opacity: 1;
-    filter: blur(0px);
     transform: translateY(0);
+    filter: blur(0);
   }
 }
 
-/* stars / dust */
+/* ----------------------------------------
+   FLOATING DUST (STAR TEXTURE)
+----------------------------------------- */
 .dust,
 .dust2 {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -50%;
+  left: -50%;
   width: 200%;
   height: 200%;
-  background: url("D:\WebProjects\NodeJs\BlenderPortfolio\artportfolio\src\images\1.png"); /* subtle dust texture */
-  opacity: 0.3;
-  animation: floatDust 50s linear infinite;
+  background-size: cover;
+  opacity: 0.28;
+  z-index: 1;
+}
+
+.dust {
+  animation: floatDust 55s linear infinite;
 }
 
 .dust2 {
-  animation: floatDust2 70s linear infinite;
-  opacity: 0.2;
+  animation: floatDust2 75s linear infinite;
+  opacity: 0.22;
 }
 
 @keyframes floatDust {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-200px, -200px, 0);
-  }
-}
-@keyframes floatDust2 {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(200px, 200px, 0);
-  }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-240px, -240px, 0); }
 }
 
-/* cursor glow */
+@keyframes floatDust2 {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(240px, 240px, 0); }
+}
+
+/* ----------------------------------------
+   CURSOR GLOW
+----------------------------------------- */
 .cursor-glow {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.14),
-    transparent 70%
+    rgba(255, 255, 255, 0) 70%
   );
   position: fixed;
   border-radius: 50%;
   pointer-events: none;
   mix-blend-mode: screen;
-  z-index: 99;
+  z-index: 20;
   transform: translate(-50%, -50%);
   transition: transform 0.08s linear;
 }
+
+/* ----------------------------------------
+   MOBILE FIXES
+----------------------------------------- */
+@media (max-width: 768px) {
+  .hero {
+    height: 90vh;
+  }
+  .cursor-glow {
+    display: none; /* mobile users don’t have cursors */
+  }
+}  
