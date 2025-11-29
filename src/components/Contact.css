@@ -1,6 +1,6 @@
 .contact-cosmic {
   position: relative;
-  background: #050510;
+  background: #03030a;
   color: #f8f6ff;
   text-align: center;
   padding: 140px 0;
@@ -134,4 +134,59 @@
 .contact-socials a:hover {
   color: #fff;
   text-shadow: 0 0 12px rgba(200,160,255,0.6);
+}
+/* layout wrapper */
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;          /* reduce gap */
+  width: 100%;
+  max-width: 1100px;  /* prevent huge spacing */
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+/* form takes equal space */
+.contact-form {
+  flex: 1;
+  max-width: 420px;
+  margin: 0;
+}
+
+/* model takes equal space but no box, no border */
+.contact-model {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 420px;       /* good balanced height */
+  margin: 0;
+  padding: 0;
+}
+
+/* ensure model viewer stretches naturally */
+.contact-model canvas,
+.contact-model model-viewer {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- MOBILE FIX ---------- */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-model {
+    height: 360px;
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 500px;
+  }
 }
