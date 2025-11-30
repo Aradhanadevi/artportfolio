@@ -1,98 +1,111 @@
+/* SECTION WRAPPER */
 .tools-cosmos {
   position: relative;
-  padding: 120px 0;
+  padding: 130px 0;
   text-align: center;
-  background: #040312;
+  background: #03030a;
   color: #fff;
   overflow: hidden;
 }
 
-/* Title */
+/* TITLE */
 .tools-title {
   font-family: "Cinzel", serif;
   font-size: 38px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .tools-sub {
   opacity: 0.7;
   font-size: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
-/* Orb grid */
-.orb-grid {
+/* GRID */
+.crystal-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 40px;
   justify-content: center;
 }
 
-/* Orb element */
-.orb {
+/* ITEM WRAPPER */
+.crystal {
   position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 130px;
+  height: 130px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.12);
-
-  animation: float 4s ease-in-out infinite;
+  align-items: center;
+  animation: floatCrystal 4s ease-in-out infinite;
 }
 
-/* Floating animation */
-@keyframes float {
+@keyframes floatCrystal {
   0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-12px); }
+  50%  { transform: translateY(-18px); }
   100% { transform: translateY(0px); }
 }
 
-/* Magical glow */
-.orb-glow {
-  position: absolute;
-  inset: -30px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(160,120,255,0.35), transparent 60%);
-  filter: blur(40px);
-  opacity: 0.6;
-  z-index: -1;
-}
-
-.orb-text {
-  font-size: 13px;
+/* SIMPLE TEXT (no crystal shape) */
+.tool-text {
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  opacity: 0.85;
+  padding: 10px 18px;
+  /* background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255,255,255,0.15); */
+  /* backdrop-filter: blur(8px); */
+  border-radius: 10px;
+  z-index: 2;
+  /* box-shadow: 0 0 22px rgba(160,120,255,0.35); */
 }
 
-/* Stars background */
-.tools-stars {
+/* Magical Runes Circle */
+.rune-ring {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 1px dashed rgba(160,120,255,0.5);
+  animation: slowSpin 12s linear infinite;
+  filter: blur(0.3px);
+  opacity: 0.6;
+  z-index: 1;
+  /* box-shadow: 0 0 12px rgba(160,120,255,0.25); */
+}
+
+@keyframes slowSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Tiny lightning sparks */
+.lightning {
+  position: absolute;
+  width: 4px;
+  height: 12px;
+  background: rgba(190,140,255,0.8);
+  opacity: 0;
+  border-radius: 2px;
+  filter: blur(2px);
+  animation: spark 3s infinite;
+}
+
+@keyframes spark {
+  0%, 100% { opacity: 0; transform: translate(0,0) rotate(0deg); }
+  30% { opacity: 1; transform: translate(10px,-15px) rotate(20deg); }
+  60% { opacity: 0; transform: translate(-12px,8px) rotate(-20deg); }
+}
+
+/* Cosmic Nebula BG */
+.nebula-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(2px 2px at 80% 50%, rgba(150,220,255,0.7), transparent),
-    radial-gradient(2px 2px at 50% 90%, rgba(255,150,255,0.7), transparent);
-  opacity: 0.2;
-  pointer-events: none;
-  animation: starsMove 20s linear infinite alternate;
-}
-
-/* gentle parallax */
-@keyframes starsMove {
-  0%   { transform: translate(-2%, -2%); }
-  100% { transform: translate(2%, 2%); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .orb {
-    width: 90px;
-    height: 90px;
-  }
+    radial-gradient(circle at 20% 30%, rgba(120,0,255,0.3), transparent 60%),
+    radial-gradient(circle at 80% 60%, rgba(0,180,255,0.25), transparent 60%),
+    radial-gradient(circle at 50% 95%, rgba(255,80,200,0.25), transparent 50%);
+  opacity: 0.35;
+  filter: blur(80px);
+  z-index: -1;
 }
