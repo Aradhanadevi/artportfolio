@@ -19,23 +19,24 @@ function App() {
   }, []);
 
   return (
-   <>
-  {loading ? (
-    <LoadingScreen />
-  ) : (
-    <div className="fade-in">
-      <Navbar />
-      <Hero />
-      <AnimationGrid />
-      <AboutMe />
-      <ToolsSection />
-      <Gallery />
-      <Contact />
-      <Footer />
-    </div>
-  )}
-</>
-
+    <>
+      {loading ? (
+        <LoadingScreen />
+      ) : (
+        <div className="fade-in cosmic-wrapper">
+          <div className="global-stars"></div>
+          <div className="global-stars2"></div>
+          <Navbar />
+          <Hero />
+          <AnimationGrid />
+          <AboutMe />
+          <ToolsSection />
+          <Gallery />
+          <Contact />
+          <Footer />
+        </div>
+      )}
+    </>
   );
 }
 
