@@ -190,3 +190,15 @@
     max-width: 500px;
   }
 }
+.model-container {
+  width: 100%;
+  height: 350px;
+  margin-top: 20px;
+}
+
+.contact-model {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
