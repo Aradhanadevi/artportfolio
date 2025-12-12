@@ -9,7 +9,7 @@ export default function ToolsSection() {
     "DaVinci Resolve",
     "After Effects",
     "Premiere Pro",
-    "Unreal Engine (Learning)",
+    "Unreal Engine",
     "Photoshop",
   ];
 
@@ -18,20 +18,24 @@ export default function ToolsSection() {
       <h2 className="tools-title">Tools I Create With</h2>
       <p className="tools-sub">crafting worlds, motion & atmosphere</p>
 
-      <div className="orb-grid">
+      <div className="crystal-grid">
         {tools.map((tool, i) => (
           <div 
             key={i} 
-            className="orb" 
+            className="crystal"
             style={{ animationDelay: `${i * 0.3}s` }}
           >
-            <span className="orb-glow"></span>
-            <span className="orb-text">{tool}</span>
+            <div className="rune-ring"></div>
+
+            {/* Plain floating tool name */}
+            <div className="tool-text">{tool}</div>
+
+            <div className="lightning"></div>
           </div>
         ))}
       </div>
 
-      <div className="tools-stars"></div>
+      <div className="nebula-bg"></div>
     </section>
   );
 }
