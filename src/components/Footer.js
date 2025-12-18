@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
-
+// Footer component with social media links and styling
 export default function Footer() {
   return (
     <footer className="footer">
