@@ -3,7 +3,7 @@ import useReveal from "./useReveal";
 
 export default function ToolsSection() {
   const revealRef = useReveal();
-
+// List of tools to display
   const tools = [
     "Blender",
     "DaVinci Resolve",
