@@ -1,6 +1,7 @@
 import React from "react";
 import "./AnimationGrid.css";
 import useReveal from "./useReveal";
+import { useEffect } from "react";
 
 // ✅ Import your local video files
 import vid1 from "../videos/v1.mp4";
@@ -10,6 +11,14 @@ import vid4 from "../videos/v4.mp4";
 
 export default function AnimationGrid() {
   const revealRef = useReveal();
+  useEffect(() => {
+  const videos = document.querySelectorAll(".anim-video");
+
+  videos.forEach(video => {
+    video.addEventListener("mouseenter", () => video.play());
+    video.addEventListener("mouseleave", () => video.pause());
+  });
+}, []);
 
   const works = [
     { title: "Forest Spirit Awakens", src: vid1, tag: "3D Animation" },
@@ -20,7 +29,6 @@ export default function AnimationGrid() {
 
   return (
     <section className="anim-section reveal" id="projects" ref={revealRef}>
-      
       <h2 className="anim-title">Featured Animations ✧</h2>
 
       <div className="anim-grid">
@@ -35,9 +43,15 @@ export default function AnimationGrid() {
                 playsInline
                 preload="metadata"
                 className="anim-video"
-                onMouseEnter={e => e.target.play()}
-                onMouseLeave={e => e.target.pause()}
+                onMouseEnter={(e) => {
+                  const video = e.target;
+                  video.play().catch(() => {}); // prevent warning
+                }}
+                onMouseLeave={(e) => {
+                  e.target.pause();
+                }}
               />
+
               <div className="overlay">
                 <span className="tag">{w.tag}</span>
               </div>
