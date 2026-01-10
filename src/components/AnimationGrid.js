@@ -3,7 +3,7 @@ import "./AnimationGrid.css";
 import useReveal from "./useReveal";
 import { useEffect } from "react";
 
-// ✅ Import your local video files
+// Import your local video files
 import vid1 from "../videos/v1.mp4";
 import vid2 from "../videos/v2.mp4";
 import vid3 from "../videos/v3.mp4";
