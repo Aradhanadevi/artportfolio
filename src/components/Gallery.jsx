@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Gallery.css";
 import useReveal from "./useReveal";
 
-// ✅ Replace these imports with your own image or video thumbnails later
+// images
 import g1 from "../images/1.png";
 import g2 from "../images/1.png";
 import g3 from "../images/1.png";
@@ -29,39 +30,42 @@ import g23 from "../images/1.png";
 import g24 from "../images/1.png";
 
 export default function Gallery() {
-
-    const revealRef = useReveal();
-  const [selected, setSelected] = useState(null);
+  const revealRef = useReveal();
+  const navigate = useNavigate();
 
   const galleryItems = [
-    { src: g1, title: "Echoes of Light" },
-    { src: g2, title: "Dreamwalker" },
-    { src: g3, title: "Crimson Bloom" },
-    { src: g4, title: "Celestial City" },
-    { src: g5, title: "Astral Ruins" },
-    { src: g6, title: "Neon Oasis" },
-    { src: g7, title: "Echoes of Light" },
-    { src: g8, title: "Dreamwalker" },
-    { src: g9, title: "Crimson Bloom" },
-    { src: g10, title: "Celestial City" },
-    { src: g11, title: "Astral Ruins" },
-    { src: g12, title: "Neon Oasis" },
-    { src: g13, title: "Echoes of Light" },
-    { src: g14, title: "Dreamwalker" },
-    { src: g15, title: "Crimson Bloom" },
-    { src: g16, title: "Celestial City" },
-    { src: g17, title: "Astral Ruins" },
-    { src: g18, title: "Neon Oasis" },
-    { src: g19, title: "Echoes of Light" },
-    { src: g20, title: "Dreamwalker" },
-    { src: g21, title: "Crimson Bloom" },
-    { src: g22, title: "Celestial City" },
-    { src: g23, title: "Astral Ruins" },
-    { src: g24, title: "Neon Oasis" },
+    { src: g1, title: "Echoes of Light", id: "echoes-of-light" },
+    { src: g2, title: "Dreamwalker", id: "dreamwalker" },
+    { src: g3, title: "Crimson Bloom", id: "crimson-bloom" },
+    { src: g4, title: "Celestial City", id: "celestial-city" },
+    { src: g5, title: "Astral Ruins", id: "astral-ruins" },
+    { src: g6, title: "Neon Oasis", id: "neon-oasis" },
+    { src: g7, title: "Echoes of Light", id: "echoes-of-light-2" },
+    { src: g8, title: "Dreamwalker", id: "dreamwalker-2" },
+    { src: g9, title: "Crimson Bloom", id: "crimson-bloom-2" },
+    { src: g10, title: "Celestial City", id: "celestial-city-2" },
+    { src: g11, title: "Astral Ruins", id: "astral-ruins-2" },
+    { src: g12, title: "Neon Oasis", id: "neon-oasis-2" },
+    { src: g13, title: "Echoes of Light", id: "echoes-of-light-3" },
+    { src: g14, title: "Dreamwalker", id: "dreamwalker-3" },
+    { src: g15, title: "Crimson Bloom", id: "crimson-bloom-3" },
+    { src: g16, title: "Celestial City", id: "celestial-city-3" },
+    { src: g17, title: "Astral Ruins", id: "astral-ruins-3" },
+    { src: g18, title: "Neon Oasis", id: "neon-oasis-3" },
+    { src: g19, title: "Echoes of Light", id: "echoes-of-light-4" },
+    { src: g20, title: "Dreamwalker", id: "dreamwalker-4" },
+    { src: g21, title: "Crimson Bloom", id: "crimson-bloom-4" },
+    { src: g22, title: "Celestial City", id: "celestial-city-4" },
+    { src: g23, title: "Astral Ruins", id: "astral-ruins-4" },
+    { src: g24, title: "Neon Oasis", id: "neon-oasis-4" },
   ];
 
-   return (
-    <section className="gallery-section reveal" id="gallery" ref={revealRef}>
+  return (
+    <section
+      className="gallery-section reveal"
+      id="gallery"
+      ref={revealRef}
+    >
       <div className="cosmic-bg"></div>
 
       <h2 className="gallery-title">Gallery ✧</h2>
@@ -72,24 +76,19 @@ export default function Gallery() {
           <div
             className="gallery-card"
             key={i}
-            onClick={() => setSelected(item)}
+            onClick={() => navigate(`/projects/${item.id}`)}
           >
-            <img src={item.src} alt={item.title} className="gallery-img" />
+            <img
+              src={item.src}
+              alt={item.title}
+              className="gallery-img"
+            />
             <div className="gallery-overlay">
               <span className="gallery-name">{item.title}</span>
             </div>
           </div>
         ))}
       </div>
-
-      {selected && (
-        <div className="lightbox" onClick={() => setSelected(null)}>
-          <div className="lightbox-inner">
-            <img src={selected.src} alt={selected.title} />
-            <span className="lightbox-title">{selected.title}</span>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
