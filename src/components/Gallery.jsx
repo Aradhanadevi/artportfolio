@@ -5,12 +5,12 @@ import useReveal from "./useReveal";
 
 // images
 import g1 from "../images/1.png";
-import g2 from "../images/1.png";
-import g3 from "../images/1.png";
-import g4 from "../images/1.png";
-import g5 from "../images/1.png";
-import g6 from "../images/1.png";
-import g7 from "../images/1.png";
+import g2 from "../images/2.jpg";
+import g3 from "../images/3.png";
+import g4 from "../images/4.png";
+import g5 from "../images/5.png";
+import g6 from "../images/6.jpg";
+import g7 from "../images/7.jpg";
 import g8 from "../images/1.png";
 import g9 from "../images/1.png";
 import g10 from "../images/1.png";
