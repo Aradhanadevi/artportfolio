@@ -1,0 +1,71 @@
+.story-cosmos {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0a0a1a, #000);
+  color: white;
+  padding-bottom: 120px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 14px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.story-hero {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.story-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.story-content {
+  max-width: 900px;
+  margin: -120px auto 0;
+  padding: 60px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+}
+
+.story-content h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.story-sub {
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.story-desc {
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+.story-tools {
+  margin-top: 40px;
+}
+
+.story-tools ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.story-tools li {
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  opacity: 0.8;
+}
