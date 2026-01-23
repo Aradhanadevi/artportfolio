@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Gallery.css";
 import useReveal from "./useReveal";
 
-// images
+
 import g1 from "../images/1.png";
 import g2 from "../images/2.jpg";
 import g3 from "../images/3.png";
